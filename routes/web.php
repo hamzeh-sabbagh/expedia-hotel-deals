@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages/deals/deal');
+});
+
+Route::get('/deals', function() {
+    return view('pages/deals/deal');
 });
