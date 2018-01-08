@@ -46,8 +46,25 @@
         <div class="container">
           <p class="lead text-muted">Search over a million flights, hotels, packages, and more.</p>
           <p>
-            <a href="#" class="btn btn-primary">Search</a>
-            <a href="#" class="btn btn-secondary">Clear</a>
+            <form action="deals" method="GET">
+              <div class="form-group">
+                <label for="Destination">Destination</label>
+                <input type="Destination" class="form-control" name="destinationCity" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="lengthOfStay">length Of Stay</label>
+                <input type="lengthOfStay" class="form-control" name="lengthOfStay" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="minStarRating">min Star Rating</label>
+                <input type="minStarRating" class="form-control" name="minStarRating" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="maxStarRating">max Star Rating</label>
+                <input type="maxStarRating" class="form-control" name="maxStarRating" placeholder="">
+              </div>
+              <input type="submit" value="Search" id="search" class="btn btn-primary">
+            </form>
           </p>
         </div>
       </section>
@@ -70,7 +87,6 @@
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.js" crossorigin="anonymous"></script>

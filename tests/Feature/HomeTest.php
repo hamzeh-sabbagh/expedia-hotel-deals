@@ -3,16 +3,16 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Http\Request;
+use App\Http\Controllers\DealController;
 
-class ExampleTest extends TestCase
+class HomeTest extends TestCase
 {
     /**
-     * A basic test example.
-     *
      * @return void
      */
-    public function testBasicTest()
+
+    public function testGetDeals()
     {
         $response = $this->get('/');
 

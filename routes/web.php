@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages/deals/deal');
-});
+Route::get('/', 'DealController@index');
 
-Route::get('/deals', function() {
-    return view('pages/deals/deal');
-});
+Route::get('/deals', 'DealController@index');
