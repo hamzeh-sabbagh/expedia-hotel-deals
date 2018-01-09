@@ -17,15 +17,28 @@
      totalPriceValue {{$hotels[0]->hotelPricingInfo->totalPriceValue}} <br/>
      currency {{$hotels[0]->hotelPricingInfo->currency}} <br/>
      percentSavings {{$hotels[0]->hotelPricingInfo->percentSavings}} <br/> --}}
-     
+
     <div class="row">
-      @foreach ($hotels as $hotel)
-        <div class="card">
-          <img data-src="{{$hotels[0]->hotelInfo->hotelImageUrl}}" alt="">
-          <p class="card-text">{{$hotels[0]->hotelInfo->hotelName}}</p>
-          <p>{{$hotels[0]->hotelInfo->hotelStarRating}}</p>
+
+      <ul class="list">
+       <h1 class="title">Hotels</h1>
+
+        @foreach ($hotels as $hotel)
+        <li><a href="#"><img src="{{$hotel->hotelInfo->hotelImageUrl}}" alt="">
+        <div class="star-badge">
+          <h6>Save <br>{{$hotel->hotelPricingInfo->percentSavings}}%</h6>
         </div>
-      @endforeach
+        <h1>{{$hotel->hotelInfo->hotelName}}</h1>
+        <div class="star-ratings">
+          <div class="star-ratings-top" style="width:{{$hotel->hotelInfo->hotelStarRating * 20}}%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <div class="star-ratings-bottom"><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></div>
+        </div>
+        <strong>Rooms left: </strong><small>{{$hotel->hotelUrgencyInfo->numberOfRoomsLeft}}</small><br>
+        <strike class="text-danger"><small class="text-danger">Original Price: {{$hotel->hotelPricingInfo->crossOutPriceValue.' '.$hotel->hotelPricingInfo->currency }}</small></strike><br>
+        <strong>Price: </strong><small class="text-success">{{$hotel->hotelPricingInfo->totalPriceValue.' '.$hotel->hotelPricingInfo->currency }}</small>
+        </img></a></li><hr>
+        @endforeach
+      </ul>
     </div>
   @endif
 @endsection

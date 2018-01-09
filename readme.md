@@ -4,6 +4,8 @@
 
 ## Expedia Hotel Offers
 Laravel application, builds and tests in Travis-CI
+
+
 Demo on heroku : https://thawing-hollows-27078.herokuapp.com/
 
 ## Installation

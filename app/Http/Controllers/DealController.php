@@ -12,7 +12,6 @@ class DealController extends Controller
         if(!empty($result)) {
             return view('pages.deals.deal',['hotels'=> $result]);
         }
-
         return view('pages.deals.deal');
     }
 

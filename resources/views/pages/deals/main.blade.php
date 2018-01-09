@@ -8,10 +8,14 @@
     <link rel="icon" href="../../../../favicon.ico">
 
     <title>Deals On Hotels</title>
+    
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 
+    <!-- main css style -->
+    <link rel="stylesheet" type="text/css" href="/css/main.css" >
     <!-- Custom styles for this template -->
     <!-- <link href="album.css" rel="stylesheet"> -->
   </head>
@@ -48,20 +52,56 @@
           <p>
             <form action="deals" method="GET">
               <div class="form-group">
-                <label for="Destination">Destination</label>
-                <input type="Destination" class="form-control" name="destinationCity" placeholder="">
+                      <input type="text" class="form-control" id="destinationCity" name="destinationCity" required="" autocomplete="off">
+                      <span class="form-highlight"></span>
+                      <span class="form-bar"></span>
+                      <label class="float-label" for="destinationCity">Destination</label>
               </div>
               <div class="form-group">
-                <label for="lengthOfStay">length Of Stay</label>
-                <input type="lengthOfStay" class="form-control" name="lengthOfStay" placeholder="">
+                      <input type="text" class="form-control" id="lengthOfStay" name="lengthOfStay" required="" autocomplete="off">
+                      <span class="form-highlight"></span>
+                      <span class="form-bar"></span>
+                      <label class="float-label" for="lengthOfStay">Length Of Stay</label>
               </div>
-              <div class="form-group">
-                <label for="minStarRating">min Star Rating</label>
-                <input type="minStarRating" class="form-control" name="minStarRating" placeholder="">
+
+              <div class="form-group star-container">
+                <label for="minStarRating" class="star-rate-label">Min rating</label>
+                <div class="min star-wrapper">
+                  <input class="star star5" name="minStarRating" id="minRadio5" type="radio" name="rating" value="5">
+                  <label class="star star5" for="minRadio5"></label>
+
+                  <input class="star star4" name="minStarRating" id="minRadio4" type="radio" name="rating" value="4">
+                  <label class="star star4" for="minRadio4"></label>
+
+                  <input class="star star3" name="minStarRating" id="minRadio3" type="radio" name="rating" value="3">
+                  <label class="star star3" for="minRadio3"></label>
+
+                  <input class="star star2" name="minStarRating" id="minRadio2" type="radio" name="rating" value="2">
+                  <label class="star star2" for="minRadio2"></label>
+
+                  <input class="star star1" name="minStarRating" id="minRadio1" type="radio" name="rating" value="1">
+                  <label class="star star1" for="minRadio1"></label>
+                </div>
               </div>
-              <div class="form-group">
-                <label for="maxStarRating">max Star Rating</label>
-                <input type="maxStarRating" class="form-control" name="maxStarRating" placeholder="">
+
+              <div class="form-group star-container">
+                <label for="maxStarRating" class="star-rate-label">Max rating</label>
+                <div class="max star-wrapper">
+                  <input class="star star5" name="maxStarRating" id="maxRadio5" type="radio" name="rating" value="5">
+                  <label class="star star5" for="maxRadio5"></label>
+
+                  <input class="star star4" name="maxStarRating" id="maxRadio4" type="radio" name="rating" value="4">
+                  <label class="star star4" for="maxRadio4"></label>
+
+                  <input class="star star3" name="maxStarRating" id="maxRadio3" type="radio" name="rating" value="3">
+                  <label class="star star3" for="maxRadio3"></label>
+
+                  <input class="star star2" name="maxStarRating" id="maxRadio2" type="radio" name="rating" value="2">
+                  <label class="star star2" for="maxRadio2"></label>
+
+                  <input class="star star1" name="maxStarRating" id="maxRadio1" type="radio" name="rating" value="1">
+                  <label class="star star1" for="maxRadio1"></label>
+                </div>
               </div>
               <input type="submit" value="Search" id="search" class="btn btn-primary">
             </form>
@@ -91,5 +131,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.js" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+      (function(){
+        'use strict'
+        
+            var items = document.getElementsByTagName('li')
+
+          function doSetTimeout(i) {
+            //console.log(items)
+            var t = items[i]
+              setTimeout(function(){ 
+                t.className = 'slideInLeft'; 
+              }, (i+1) * 150);
+          }
+
+          for (var i = 0; i < items.length; ++i)
+            doSetTimeout(i);
+        
+      })()
+    </script>
+
   </body>
 </html>
