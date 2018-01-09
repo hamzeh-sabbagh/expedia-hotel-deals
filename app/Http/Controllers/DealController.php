@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class DealController extends Controller
 {
-     public function index(Request $filter) {
+    public function index(Request $filter) {
 
         $result = $this->getDeals($filter);
         if(!empty($result)) {
@@ -17,7 +17,7 @@ class DealController extends Controller
     }
 
     public function getDeals(Request $filter) {
-        
+
         $params = [
             'scenario' => 'deal-finder',
             'page' => 'foo',
@@ -26,9 +26,7 @@ class DealController extends Controller
         ];
 
         $url_params = http_build_query(array_merge($params,$filter->all()));
-        $url = 'https://offersvc.expedia.com/offers/v2/getOffers?' . $url_params;
-
-        $response = json_decode(file_get_contents($url));
+        $response = json_decode(file_get_contents(env('DEALS_API_LINK') . $url_params));
 
         if(isset($response->offers->Hotel)) {
             return $response->offers->Hotel;

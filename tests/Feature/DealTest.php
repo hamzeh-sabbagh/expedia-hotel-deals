@@ -17,7 +17,7 @@ class DealTest extends TestCase
 
         $req = new Request([]);
         $deal = $controller->getDeals($req);
-        $this->assertTrue(is_array($deal));
+        $this->assertTrue(!empty($deal) && is_array($deal));
     }
 
     public function testGetDealsWithParams()
@@ -26,6 +26,6 @@ class DealTest extends TestCase
 
         $req = new Request(['minStarRating'=> 1,'maxStarRating' =>4,'destinationCity'=> 'Amman','lengthOfStay'=> 3]);
         $deal = $controller->getDeals($req);
-        $this->assertTrue(is_array($deal));
+        $this->assertTrue(!empty($deal) && is_array($deal));
     }
 }
